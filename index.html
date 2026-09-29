@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pong</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <div class="scoreboard">
+        <span id="playerScore">0</span>
+        <span class="divider">:</span>
+        <span id="aiScore">0</span>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="game" width="900" height="500"></canvas>
+
+        <div id="overlay" class="overlay visible">
+          <div class="overlay-card">
+            <h1 id="overlayTitle">Pong</h1>
+            <p id="overlayText">Use your mouse or the arrow keys.</p>
+            <button id="overlayButton" type="button">Start Game</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
