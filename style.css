@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #020817;
+  --panel: rgba(15, 23, 42, 0.85);
+  --line: rgba(255, 255, 255, 0.4);
+  --text: #e2e8f0;
+  --accent: #facc15;
+  --paddle: #f8fafc;
+  --button: #2563eb;
+  --button-hover: #1d4ed8;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top, rgba(37, 99, 235, 0.2), transparent 30%),
+    var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+.game-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.scoreboard {
+  background: var(--panel);
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  padding: 0.5rem 1.25rem;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.divider {
+  margin: 0 0.35rem;
+}
+
+.canvas-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+canvas {
+  display: block;
+  width: min(90vw, 900px);
+  height: auto;
+  background: #0f172a;
+  border: 3px solid var(--paddle);
+  border-radius: 12px;
+  cursor: crosshair;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(2, 8, 23, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.overlay.visible {
+  display: grid;
+}
+
+.overlay-card {
+  width: min(80%, 420px);
+  background: rgba(15, 23, 42, 0.94);
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.4);
+}
+
+.overlay h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 0.08em;
+}
+
+.overlay p {
+  margin: 0 0 1.25rem;
+  color: rgba(226, 232, 240, 0.85);
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  background: var(--button);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.85rem 1.5rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+button:hover {
+  background: var(--button-hover);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
